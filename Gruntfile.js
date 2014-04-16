@@ -56,7 +56,7 @@ module.exports = function (grunt) {
         changelog: {
             sample: {
               options: {
-                after: '2014-03-20'
+                repository: '<%=pkg.repository.url%>'
               }
             }
         }
