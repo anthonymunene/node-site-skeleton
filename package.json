@@ -1,6 +1,6 @@
 {
   "name": "node-todo",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "expressjs",
   "main": "index.js",
   "scripts": {
@@ -33,6 +33,7 @@
     "grunt-contrib-compass": "~0.7.2",
     "express-hbs": "~0.7.9",
     "grunt-bower-task": "~0.3.4",
-    "grunt-bump": "0.0.13"
+    "grunt-bump": "0.0.13",
+    "grunt-conventional-changelog": "~1.1.0"
   }
 }
