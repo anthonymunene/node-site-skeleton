@@ -47,12 +47,25 @@ module.exports = function (grunt) {
         		dest: '<%= target%>/javascripts/vendor/',
         		filter: 'isFile'
         	}
+        },
+        bump: {
+            options: {
+                pushTo: '<%=pkg.repository.url%>'
+            }
+        },
+        changelog: {
+            sample: {
+              options: {
+                after: '2014-03-20'
+              }
+            }
         }
 	});
     // will read the dependencies/devDependencies/peerDependencies in your package.json
     // and load grunt tasks that match the provided patterns.
     // Loading the different plugins
 	require('load-grunt-tasks')(grunt);
-	grunt.registerTask('default', ['bootstrapSetup', 'express']);
+    grunt.registerTask('default', ['express']);
 	grunt.registerTask('bootstrapSetup', ['concat:createBootstrapJS', 'copy:copyJqueryDev', 'compass:dev']);
+    grunt.registerTask('releasePatch', ['bump-only:patch', 'changelog', 'bump-commit'])
 };
